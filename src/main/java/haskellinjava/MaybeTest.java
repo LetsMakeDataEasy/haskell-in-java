@@ -1,3 +1,5 @@
+package haskellinjava;
+
 import java.util.function.Function;
 
 class Maybe<A> implements Functor<A, Maybe<?>> {

@@ -1,4 +1,7 @@
+package haskellinjava;
 import java.util.function.Function;
+
+import static haskellinjava.Functor2.fmap;
 
 class MaybeTest2<A> implements Functor2<A> {
 
@@ -28,8 +31,7 @@ class MaybeTest2<A> implements Functor2<A> {
         Function<String, String> toUpperCase = String::toUpperCase;
         Function<String, String> toLowerCase = String::toLowerCase;
         Function<String, String> fn = toUpperCase.andThen(toLowerCase);
-        Function<Functor2<String>, Functor2<String>> fmap = Functor2.fmap(fn);
-        fmap.apply(Just("String"));
+        fmap(fn).apply(Just("String"));
     }
 
 }
